@@ -12,7 +12,7 @@ var body = document.querySelector("body");
 console.log(body);
 // inserindo no corpo do html
 body.appendChild(novoParagrafo);
-
+ 
 // inserir em um container
 // mapeou a div
 var container = document.getElementById("container");

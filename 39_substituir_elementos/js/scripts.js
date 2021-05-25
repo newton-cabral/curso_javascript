@@ -15,6 +15,8 @@ var title = document.querySelector("#title");
 console.log(title);
 
 // selecionar o pai do el
+//var body = document.querySelector("body");
+// pode ser substituida por esse abaixo
 var pai = title.parentNode;
 
 // trocar os elementos

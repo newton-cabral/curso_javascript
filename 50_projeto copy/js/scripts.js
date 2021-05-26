@@ -1,20 +1,42 @@
-//Keydown
+// função que adiciona tarefa
 
-document.addEventListener("keydown", function (event) {
-  console.log(event.key);
+function addTask() {
+  // titulo da tarefa
+  const taskTitle = document.querySelector("#task-title").value;
 
 
-  if (event.key === "Enter") {
-    console.log("Apertou Enter");
-    }
+  if (taskTitle) {
+    const template = document.querySelector(".template");
+    const newTask = template.cloneNode(true);
+    // adiciona titulo
+    newTask.querySelector(".task-title").textcontent = taskTitle;
 
-});
+    //remover as classes desnecessárias
 
-//Keyup
+    newTask.classList.remove("template");
+    newTask.classList.remove("hide");
 
-document.addEventListener("Keyup", function(eee) {
+    // adicionar a tarefa na lista
 
- if (eee.key == "Enter"){
-    console.log("Soltou o Enter");
+    const list = document.querySelector("#task-list");
+    list.appendChild(newTask);
+
+// limpa texto
+document.querySelector("#task-title").value = "";
+
+
   }
-});
+}
+
+
+
+
+// evento adiciona tarefa
+
+const addBtn = document.querySelector("#add-btn");
+
+addBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  addTask();
+})
